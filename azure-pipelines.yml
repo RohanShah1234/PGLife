@@ -33,6 +33,13 @@ stages:
       inputs:
         containerRegistry: 'IntranetACR'
         repository: 'IntranetBE'
+- task: Docker@2
+  inputs:
+    containerRegistry: 'IntranetACR'
+    repository: 'IntranetBE'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
+    tags: 'latest'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
         tags: 'latest'
