@@ -3,7 +3,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
 trigger:
-- main
+- Dev-BE
 
 resources:
 - repo: self
@@ -32,7 +32,7 @@ stages:
       displayName: Build and push an image to container registry
       inputs:
         containerRegistry: 'IntranetACR'
-        repository: 'IntranetBE'
+        repository: 'BE-Dev'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
         tags: $(tag)
